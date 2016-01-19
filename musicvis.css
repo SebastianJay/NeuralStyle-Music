@@ -1,0 +1,21 @@
+.music-left {
+    text-align: left;
+}
+
+.music-center {
+    text-align: center;
+}
+
+.music-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.music-container {
+    font-family: arial;
+    font-size: 11pt;
+}
+
+#music-freqdisplay {
+    display: inline;
+}
