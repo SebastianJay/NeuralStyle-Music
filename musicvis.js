@@ -140,7 +140,7 @@ function updateCallbackCounter() {
     if (gInitCounter >= 2) {
         //initialize timers
         gLoaded = true;
-        gTimestamp = Date.now();
+        gTimestamp = 0.0;
         //start music
         var elt = document.getElementById('music-player');
         elt.src = 'music/' + gSongName + '.wav';
@@ -165,7 +165,6 @@ function playButtonHandler() {
         } else {
             elt.play();
             elt1.innerHTML = 'Pause';
-            gTimestamp = Date.now();
         }
         gPaused = !gPaused;
     }
@@ -389,8 +388,8 @@ function updateFilters() {
 function animate() {
     if (!gPaused) {
         //update timestamps
-        var now = Date.now();
-        gDT = now - gTimestamp;
+        var now = document.getElementById('music-player').currentTime;
+        gDT = (now - gTimestamp) * 1000;
         gCurrentTime += gDT;
         gTimestamp = now;
 
